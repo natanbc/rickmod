@@ -1,6 +1,6 @@
 # rickmod
 
-Replace all .mp3 files by rickroll, at a kernel level
+Replace all .mp3 files with rickroll, at a kernel level
 
 # Usage
 
