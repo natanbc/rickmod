@@ -30,12 +30,19 @@ static int open(struct inode* i, struct file* f) {
     return single_open(f, show, NULL);
 }
 
-static const struct file_operations fops = {
+/*static const struct file_operations fops = {
     .llseek = seq_lseek,
     .open = open,
     .owner = THIS_MODULE,
     .read = seq_read,
     .release = single_release,
+};
+*/
+static const struct proc_ops fops = {
+    .proc_lseek = seq_lseek,
+    .proc_open = open,
+    .proc_read = seq_read,
+    .proc_release = single_release,
 };
 
 static int ends_with(const char* str, const char* suffix) {
